@@ -136,13 +136,16 @@ describe("Transform", function () {
 
     it("should return the right values for getTransform", function () {
       fakeContext.translate(1, 2);
-      expect(fakeContext.getTransform(), "translate").to.deep.equal([1, 0, 0, 1, 1, 2]);
+      expect(fakeContext.getTransform(), "translate")
+        .to.deep.equal([1, 0, 0, 1, 1, 2]);
 
       fakeContext.scale(2, 2);
-      expect(fakeContext.getTransform(), "scale").to.deep.equal([2, 0, 0, 2, 1, 2]);
+      expect(fakeContext.getTransform(), "scale")
+        .to.deep.equal([2, 0, 0, 2, 1, 2]);
 
       fakeContext.save();
-      expect(fakeContext.getTransform(), "save").to.deep.equal([2, 0, 0, 2, 1, 2]);
+      expect(fakeContext.getTransform(), "save")
+        .to.deep.equal([2, 0, 0, 2, 1, 2]);
 
       fakeContext.rotate(Math.PI / 2);
       (function () {
@@ -156,16 +159,20 @@ describe("Transform", function () {
       }());
 
       fakeContext.restore();
-      expect(fakeContext.getTransform(), "restore").to.deep.equal([2, 0, 0, 2, 1, 2]);
+      expect(fakeContext.getTransform(), "restore")
+        .to.deep.equal([2, 0, 0, 2, 1, 2]);
 
       fakeContext.transform(0, 1, 1, 0, 0, 0); // Transpose
-      expect(fakeContext.getTransform(), "restore").to.deep.equal([0, 2, 2, 0, 1, 2]);
+      expect(fakeContext.getTransform(), "restore")
+        .to.deep.equal([0, 2, 2, 0, 1, 2]);
 
       fakeContext.setTransform(1, 2, 3, 4, 5, 6);
-      expect(fakeContext.getTransform(), "setTransform").to.deep.equal([1, 2, 3, 4, 5, 6]);
+      expect(fakeContext.getTransform(), "setTransform")
+        .to.deep.equal([1, 2, 3, 4, 5, 6]);
 
       fakeContext.resetTransform();
-      expect(fakeContext.getTransform(), "resetTransform").to.deep.equal([1, 0, 0, 1, 0, 0]);
+      expect(fakeContext.getTransform(), "resetTransform")
+        .to.deep.equal([1, 0, 0, 1, 0, 0]);
     });
   });
 });
