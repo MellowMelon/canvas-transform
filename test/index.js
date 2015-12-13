@@ -109,6 +109,26 @@ describe("Transform", function () {
       Transform.augmentContext(fakeContext);
     });
 
+    it("should throw when passed a non-context", function () {
+      expect(function () {
+        Transform.augmentContext(null);
+      }, "null").to.throw(Error);
+      expect(function () {
+        Transform.augmentContext({});
+      }, "{}").to.throw(Error);
+    });
+
+    it("should do nothing when the context has getTransform", function () {
+      var fakeGetTransform = function () {};
+      var anotherFakeContext = {
+        canvas: {},
+        getTransform: fakeGetTransform,
+      };
+      Transform.augmentContext(anotherFakeContext);
+      expect(anotherFakeContext.getTransform).to.equal(fakeGetTransform);
+      expect(anotherFakeContext.save).to.not.exist;
+    });
+
     it("should add a getTransform method returning a matrix", function () {
       expect(fakeContext.getTransform()).to.deep.equal([1, 0, 0, 1, 0, 0]);
     });
