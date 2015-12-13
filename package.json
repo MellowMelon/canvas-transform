@@ -1,0 +1,30 @@
+{
+  "name": "canvas-transform",
+  "version": "1.0.0",
+  "description": "Implement getTransform in Canvas contexts and expose the implementation.",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "canvas",
+    "context",
+    "matrix",
+    "transform",
+    "gettransform"
+  ],
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint": "^1.10.2",
+    "mocha": "^2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MellowMelon/canvas-transform.git"
+  },
+  "author": {
+    "name": "Palmer Mebane"
+  },
+  "scripts": {
+    "test": "mocha || true",
+    "check": "eslint -c .eslintrc *.js test/*.js || true"
+  }
+}
