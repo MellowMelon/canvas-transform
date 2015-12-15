@@ -66,6 +66,9 @@ is equivalent to `Transform.translate(10, 20)`.
 Pass in a Canvas context, and a `getTransform` method will be added to it if
 it does not already exist. `getTransform` returns a `TransformMatrix`.
 
+This method will also add `resetTransform` to the context if it does not exist,
+implemented by calling `setTransform(1, 0, 0, 1, 0, 0)`.
+
 # Test
 
 With [npm](http://npmjs.org) installed, run

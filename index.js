@@ -76,6 +76,10 @@ exports.augmentContext = function (ctx) {
     return;
   }
 
+  ctx.resetTransform = ctx.resetTransform || function () {
+    this.setTransform(1, 0, 0, 1, 0, 0);
+  };
+
   var transform = [1, 0, 0, 1, 0, 0];
   var stack = [];
   transformMethodNames.forEach(function (name) {
