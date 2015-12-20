@@ -129,6 +129,14 @@ describe("Transform", function () {
       expect(anotherFakeContext.save).to.not.exist;
     });
 
+    it("should implement resetTransform", function () {
+      var anotherFakeContext = {
+        canvas: {},
+      };
+      Transform.augmentContext(anotherFakeContext);
+      expect(anotherFakeContext.resetTransform).to.exist;
+    });
+
     it("should add a getTransform method returning a matrix", function () {
       expect(fakeContext.getTransform()).to.deep.equal([1, 0, 0, 1, 0, 0]);
     });
