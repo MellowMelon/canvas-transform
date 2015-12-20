@@ -41,9 +41,9 @@ var multiply = exports.multiply = function (m1, m2) {
   ];
 };
 
-// Given the current transformation matrix, a transform to apply to it, and
-// its arguments as an array, return the new transformation matrix. If an
-// unrecognized method is provided, returns the original matrix.
+// Given the current transformation matrix, a transform to apply to it, and its
+// arguments as an array or array-like object, return the new transformation
+// matrix. If an unrecognized method is provided, returns the original matrix.
 var processMethod = exports.process = function (m, methodName, args) {
   // Resetting transforms.
   if (methodName === "resetTransform") {
@@ -76,6 +76,7 @@ exports.augmentContext = function (ctx) {
     return;
   }
 
+  // Implement resetTransform if not present already.
   ctx.resetTransform = ctx.resetTransform || function () {
     this.setTransform(1, 0, 0, 1, 0, 0);
   };
