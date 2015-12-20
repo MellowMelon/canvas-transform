@@ -1,5 +1,5 @@
 {
-  "name": "canvas-transform",
+  "name": "canvas-get-transform",
   "version": "1.0.0",
   "description": "Implement getTransform in Canvas contexts and expose the implementation.",
   "main": "index.js",
