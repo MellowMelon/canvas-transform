@@ -26,30 +26,34 @@ b d f
 0 0 1
 ```
 
-## `Transform.translate(x, y) -> TransformMatrix`
+## `Transform.translate(x, y)`
 
-Returns the matrix to multiply by when a context's translate method is called.
+Returns a `TransformMatrix` to multiply by when a context's translate method is
+called.
 
-## `Transform.rotate(angle) -> TransformMatrix`
+## `Transform.rotate(angle)`
 
-Returns the matrix to multiply by when a context's rotate method is called.
+Returns a `TransformMatrix` to multiply by when a context's rotate method is
+called.
 
-## `Transform.scale(x, y) -> TransformMatrix`
+## `Transform.scale(x, y)`
 
-Returns the matrix to multiply by when a context's scale method is called.
+Returns a `TransformMatrix` to multiply by when a context's scale method is
+called.
 
-## `Transform.transform(a, b, c, d, e, f) -> TransformMatrix`
+## `Transform.transform(a, b, c, d, e, f)`
 
-Returns the matrix to multiply by when a context's transform method is called.
+Returns a `TransformMatrix` to multiply by when a context's transform method is
+called.
 
-## `Transform.multiply(m1, m2) -> TransformMatrix`
+## `Transform.multiply(m1, m2)`
 
-Returns the result of multiplying `m1` and `m2` as 3 by 3 matrices. Each of `m1`
-and `m2` should be a `TransformMatrix`.
+Returns a `TransformMatrix` with the result of multiplying `m1` and `m2` as 3
+by 3 matrices.
 
-## `Transform.process(m, methodName, args) -> TransformMatrix`
+## `Transform.process(m, methodName, args)`
 
-Returns the result of multiplying `m`, specified as a `TransformMatrix`, by the
+Returns a `TransformMatrix` with the result of multiplying `m` by the
 transformation matrix that results from applying the Canvas method with name
 `methodName` and arguments `args`. The supported `methodName` values are
 `translate`, `rotate`, `scale`, `transform`, `setTransform`, and
