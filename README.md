@@ -9,13 +9,13 @@ other context wrappers.
 With [npm](http://npmjs.org) installed, run
 
 ```
-npm install canvas-transform
+npm install canvas-get-transform
 ```
 
 # API
 
 ``` js
-var Transform = require("canvas-transform");
+var Transform = require("canvas-get-transform");
 ```
 
 The type `TransformMatrix` used in this API documentation is a six element
